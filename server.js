@@ -23,7 +23,7 @@ app.use(clog);
 app.use(router);
 
 
-//
+//PORT PATH
 app.listen(PORT, () =>
     console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
