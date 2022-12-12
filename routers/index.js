@@ -18,6 +18,11 @@ router.get('/notes', (req, res) =>
 router.get('/api/notes', notes.getNotes);
 
 
+router.post('/api/notes', notes.writeNotes);
+
+
+
+
 router.post('/api/notes', )
 
 module.exports = router;
