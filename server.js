@@ -1,37 +1,26 @@
 
 //Dependencies 
-const { Console } = require('console');
 const express = require('express');
-const path = require('path');
+const router = require('./routers')
+const { clog } = require('./middleware/clog');
 
 
 //SETS UP  the express app
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 
-//Static Path set to pub;lic folder (images,CSS,etc)
+//Static Path set to public folder (images,CSS,etc)
 app.use(express.static('public'));
 
 
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(clog);
 
-
-
-
-// GET Route for homepage
-app.get('/', (req, res) =>
-    res.sendFile(path.join(__dirname, '/public/index.html'))
-);
-
-
-//GET Route for notes page
-app.get('/notes', (req, res) =>
-    res.sendFile(path.join(__dirname, '/public/notes.html'))
-);
-
+// API
+app.use(router);
 
 
 //
