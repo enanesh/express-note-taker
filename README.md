@@ -65,7 +65,7 @@ nodemon : https://www.npmjs.com/package/nodemon
 
 ## Technology Used
 - HTML
-- Tailwind
+- Bootstrap
 - JavaScript
 - Node.js
 - Express
